@@ -1,0 +1,106 @@
+.header {
+	position: relative;
+	background: #555753;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 50px;
+	padding: 5px 20px;
+	z-index: 99;
+}
+
+.header li {
+	list-style-type: none;
+	display: inline-block;
+	margin-right: 10px;
+		z-index: 1;
+}
+
+.header a {
+	text-decoration: none;
+	color: white;
+		z-index: 1;
+}
+
+.header a:hover {
+	color: grey;
+}
+
+.hamburger {
+	display: flex;
+	align-items: center;
+}
+
+.hamburger-btn {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.bar {
+	width: 50px;
+	height: 8px;
+	background-color: #fff;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+.mobile-bar1, .mobile-bar2 {
+	position: fixed;
+	left: 75vw;
+	top: 20px;
+}
+
+.mobile-bar1 {
+	transform: rotate(-45deg) translate(-9px, -9px);
+}
+
+.mobile-bar2 {
+	transform: rotate(45deg) translate(-9px, 9px);
+}
+
+/* mobile nav*/
+.mobile {
+	z-index: 99;
+	position: fixed;
+	top: 0;
+	background: rgba(30, 30, 30, 0.9);
+	width: 80vw;
+	height: 100vh;
+	
+	/* display: none; */
+	transform: translateX(-100%);
+	transition: 500ms;
+}
+
+.mobile li a {
+	color: white;
+	text-decoration: none;
+	font-size: 2em;
+}
+
+.mobile-items {
+	list-style-type: none;
+	margin: 20px;
+}
+
+.mobile li li {
+	margin: 15px;
+	font-size: 0.8em;
+}
+
+.open {
+	transform: translateX(0);
+}
+
+@media ( max-width : 1078px) {
+	.desk {
+		display: none;
+	}
+}
+
+@media ( min-width : 1079px) {
+	.hamburger {
+		display: none;
+	}
+}
