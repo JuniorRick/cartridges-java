@@ -16,6 +16,8 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/">Home</a></li>
 				<li><a href="${pageContext.request.contextPath}/toners">Toners</a></li>
+				<li><a href="${pageContext.request.contextPath}/toners/add">Add
+						Toner</a></li>
 				<li><a href="#">Cartridges</a></li>
 			</ul>
 		</div>
@@ -30,15 +32,29 @@
 	</div>
 
 	<ul class="mobile-items">
-		<li class="mobile-item"><a href="${pageContext.request.contextPath}/">Home</a></li>
-		<li class="mobile-item"><a href="${pageContext.request.contextPath}/toners">Toners</a>
+		<li class="mobile-item">
+			<a href="${pageContext.request.contextPath}/">Home</a>
+		</li>
+		<hr style="border-color: white; width: 70%;">
+
+		<li class="mobile-item">
+			<a href="${pageContext.request.contextPath}/toners">Toners</a>
 			<ul>
-				<li><a href="#">Add new</a></li>
-			</ul></li>
+				<li>
+					<a href="${pageContext.request.contextPath}/toners/add">
+					Add	new</a></li>
+			</ul>
+		</li>
+		
+		<hr style="border-color: white; width: 70%;">
 		<li class="mobile-item"><a href="">Cartridges</a>
 			<ul>
 				<li><a href="#">Add new</a></li>
-			</ul></li>
+			</ul>
+		</li>
+		
+		<hr style="border-color: white; width: 70%;">
+		
 	</ul>
 </nav>
 

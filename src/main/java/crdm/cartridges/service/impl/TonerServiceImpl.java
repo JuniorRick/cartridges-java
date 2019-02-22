@@ -29,7 +29,6 @@ public class TonerServiceImpl  implements TonerService {
 		return tonerDAO.findAll();
 	}
 
-
 	@Override
 	public void save(Toner toner) {
 		tonerDAO.save(toner);

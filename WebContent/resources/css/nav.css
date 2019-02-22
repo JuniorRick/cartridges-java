@@ -5,7 +5,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 50px;
+	height: 200px;
 	padding: 5px 20px;
 	z-index: 99;
 }
@@ -14,13 +14,13 @@
 	list-style-type: none;
 	display: inline-block;
 	margin-right: 10px;
-		z-index: 1;
+	z-index: 1;
 }
 
 .header a {
 	text-decoration: none;
 	color: white;
-		z-index: 1;
+	z-index: 1;
 }
 
 .header a:hover {
@@ -47,8 +47,8 @@
 
 .mobile-bar1, .mobile-bar2 {
 	position: fixed;
-	left: 75vw;
-	top: 20px;
+	left: 70vw;
+	top: 50px;
 }
 
 .mobile-bar1 {
@@ -67,7 +67,6 @@
 	background: rgba(30, 30, 30, 0.9);
 	width: 80vw;
 	height: 100vh;
-	
 	/* display: none; */
 	transform: translateX(-100%);
 	transition: 500ms;
@@ -97,10 +96,16 @@
 	.desk {
 		display: none;
 	}
+	.header {
+		height: 100px;
+	}
 }
 
 @media ( min-width : 1079px) {
 	.hamburger {
 		display: none;
+	}
+	.header {
+		height: 50px;
 	}
 }

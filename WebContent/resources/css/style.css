@@ -1,5 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700'
-	;
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
 
 html, body {
 	margin: 0;
@@ -15,28 +14,59 @@ html, body {
 .bg-left, .bg-right {
 	position: fixed;
 	top: 0;
-	background: #25AEE4;
+	background: #888a85;
 	width: 40vw;
 	height: 100vh;
 
 }
 
-a {
-	text-decoration: none;
-	color: white;
+.bg-right {
+	right: 0;
+	background: #d3d7cf;
 }
 
+.bg-left:after {
+	content: "";
+	top: 0;
+	position: fixed;
+	left: 40vw;
+	width: 0;
+	height: 0;
+	border-left: 20vw solid #888a85;
+	border-bottom: 100vh solid transparent;
+
+}
+
+.bg-right:before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 40vw;
+	width: 0;
+	height: 0;
+	border-right: 20vw solid #d3d7cf;
+	border-top: 100vh solid transparent;
+}
+
+
 .toners-text, .cartridges-text {
-	color: white;
 	position: fixed;
 	z-index: 98;
 	font-size: 64px;
 }
 
-.toners-text a:hover, .cartridges-text a:hover {
-	color: grey;
-	text-decoration: none;
+.cartridges-text a {
+	color: #888a85;
 }
+
+.toners-text a {
+	color: #d3d7cf;
+}
+
+.toners-text a:hover, .cartridges-text a:hover {
+	color: #fff;
+	text-decoration: none;
+} 
 
 
 .toners-text {
@@ -49,34 +79,10 @@ a {
 	right: 15vw;
 }
 
-.bg-right {
-	right: 0;
-	background: #3AA7CF;
-}
 
-.bg-left:after {
-	content: "";
-	top: 0;
-	position: fixed;
-	left: 40vw;
-	width: 0;
-	height: 0;
-	border-left: 20vw solid #25AEE4;
-	border-bottom: 100vh solid transparent;
-
-}
-
-
-
-.bg-right:before {
-	content: "";
-	position: fixed;
-	top: 0;
-	left: 40vw;
-	width: 0;
-	height: 0;
-	border-right: 20vw solid #3AA7CF;
-	border-top: 100vh solid transparent;
+a {
+	text-decoration: none;
+	color: white;
 }
 
 .box {
