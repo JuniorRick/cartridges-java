@@ -13,33 +13,31 @@
 	<jsp:include page="/WEB-INF/views/layouts/nav.jsp" />
 
 	<div class="clearfix mr-3">
-		<h3 class="float-right">Add new Toner</h3>
+		<h3 class="float-right">Add new Cartridge</h3>
 	</div>
 
 	<div class="container" style="max-width: 600px">
 
-		<form:form action="save" modelAttribute="toner" method="POST">
-			
+		<form:form action="save" modelAttribute="cartridge" method="POST">
+
 			<form:hidden path="id" />
-			<form:hidden path="remainder" />
-			<form:hidden path="active" />
-		
+			
 			<div class="form-group">
-				<label for="">Toner model</label>
+				<label for="">Barcode</label>
+				<form:input path="barcode" cssClass="form-control"
+					placeholder="Enter Barcode" />
+			</div>
+			<div class="form-group">
+				<label for="">Model</label>
 				<form:input path="model" cssClass="form-control"
-					placeholder="Enter Model" />
+					placeholder="Enter model" />
 			</div>
 			<div class="form-group">
-				<label for="">Quantity</label>
-				<form:input path="quantity" cssClass="form-control"
-					placeholder="Enter quantity" />
+				<label for="">Office</label>
+				<form:input path="office" cssClass="form-control"
+					placeholder="Enter office" />
 			</div>
-			
-			<div class="form-group">
-				<label for="">Purchase Date</label>
-				<input type="date" id="procure_date" name="procure_date" class="form-control" value="${toner.procure_date}" />
-			</div>
-			
+
 			<input type="submit" class="btn btn-primary" value="Save">
 		</form:form>
 	</div>

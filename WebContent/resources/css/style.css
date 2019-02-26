@@ -1,4 +1,5 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700'
+	;
 
 html, body {
 	margin: 0;
@@ -8,7 +9,7 @@ html, body {
 	text-rendering: optimizeLegibility;
 	color: #444;
 	background: #eee;
-	font-size: 26px;
+	font-size: 22px;
 }
 
 .bg-left, .bg-right {
@@ -17,7 +18,6 @@ html, body {
 	background: #888a85;
 	width: 40vw;
 	height: 100vh;
-
 }
 
 .bg-right {
@@ -34,7 +34,6 @@ html, body {
 	height: 0;
 	border-left: 20vw solid #888a85;
 	border-bottom: 100vh solid transparent;
-
 }
 
 .bg-right:before {
@@ -47,7 +46,6 @@ html, body {
 	border-right: 20vw solid #d3d7cf;
 	border-top: 100vh solid transparent;
 }
-
 
 .toners-text, .cartridges-text {
 	position: fixed;
@@ -66,8 +64,7 @@ html, body {
 .toners-text a:hover, .cartridges-text a:hover {
 	color: #fff;
 	text-decoration: none;
-} 
-
+}
 
 .toners-text {
 	top: 20vh;
@@ -78,7 +75,6 @@ html, body {
 	bottom: 20vh;
 	right: 15vw;
 }
-
 
 a {
 	text-decoration: none;
@@ -116,26 +112,22 @@ td:before {
 }
 
 .table {
-	position: relative !important;
-	z-index: 0 !important;
+	position: relative;
 }
 
 @media ( min-width : 1079px) {
-	html, body {
-		font-size: 1em;
-	}
 	.box {
 		margin: 0;
 	}
-	
-	
-	
-	td:before {
-		display: none;
+	html, body {
+		font-size: 14px;
 	}
 	th, td {
 		display: table-cell;
 		padding: .25em .5em;
+	}
+	td:before {
+		display: none;
 	}
 	th:first-child, td:first-child {
 		padding-left: 0;

@@ -23,7 +23,6 @@ public class TonerServiceImpl  implements TonerService {
 		return tonerDAO.find(id);
 	}
 
-	
 	public List<Toner> findAll() {
 
 		return tonerDAO.findAll();
@@ -33,6 +32,11 @@ public class TonerServiceImpl  implements TonerService {
 	public void save(Toner toner) {
 		tonerDAO.save(toner);
 		
+	}
+
+	@Override
+	public void delete(Integer id) {
+		tonerDAO.delete(id);
 	}
 
 }

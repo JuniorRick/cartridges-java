@@ -45,23 +45,40 @@ public class TonersController {
 		return "add-toner";
 	}
 	
+	
 	@PostMapping("/save")
 	public String save(@ModelAttribute("toner") Toner toner) {
 		
+		if(toner.getId() == null) {
+			toner.setRemainder(toner.getQuantity());
+		} else {
+			Toner persisted = tonerService.find(toner.getId());
+			toner.setRemainder(toner.getQuantity() - persisted.getQuantity() + persisted.getRemainder());
+		}
+			
 		tonerService.save(toner);
 		
-		return "toners";
+		return "redirect:/toners";
 	}
 	
+	
 	@GetMapping("/update")
-	public String update(@RequestParam("Id") Integer id, final RedirectAttributes redirectAttributes) {
+	public String update(@RequestParam("id") Integer id, final RedirectAttributes redirectAttributes) {
+		
+		
 		
 		Toner toner = tonerService.find(id);
 		
-		redirectAttributes.addAttribute("toner", toner);
+		redirectAttributes.addFlashAttribute("toner", toner);
 		
 		return "redirect:/toners/add";
 	}
 	
+	@GetMapping("/delete")
+	public String delete(@RequestParam("id") Integer id) {
+		tonerService.delete(id);
+		
+		return "redirect:/toners";
+	}
 	
 }

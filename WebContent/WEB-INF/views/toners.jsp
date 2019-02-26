@@ -30,24 +30,68 @@
 		<div class="row">
 			<div class="col">
 				<table class="table">
-					<thead class="thead-dark">
+					<thead>
 						<tr>
 							<th>#</th>
 							<th scope="col">Model</th>
 							<th scope="col">Quantity (gr)</th>
 							<th scope="col">Quantity Remained (gr)</th>
 							<th scope="col">Procure date</th>
+							<th scope="col">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach items="${toners}" var="toner" varStatus="loop">
 							<tr>
-								<td data-th="Position">${loop.index + 1}</td>
+								<td data-th="Position"> ${loop.index + 1}</td>
 								<td data-th="Model">${toner.model}</td>
 								<td data-th="Quantity">${toner.quantity}</td>
 								<td data-th="Remainder">${toner.remainder}</td>
 								<td data-th="Procure date">${toner.procure_date}</td>
+								<td data-th="Actions" style="white-space: nowrap;">
+									<div>
+									<c:url var="update" value="/toners/update">
+										<c:param name="id" value="${toner.id}" />
+									</c:url> <c:url var="delete" value="/toners/delete">
+										<c:param name="id" value="${toner.id}" />
+									</c:url> 
+									
+									<a href="${update}" class="btn btn-secondary btn-sm" >Edit</a>
+									<button class="btn btn-danger btn-sm" data-toggle="modal"
+											data-target="#confirmModal${toner.id}">
+											Delete
+										</button>
+									</div>
+								</td>
 							</tr>
+							
+							<div class="modal fade" id="confirmModal${toner.id}">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">
+													Delete
+												</h5>
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												Delete
+												<span class="text-danger font-weight-bold">${toner.model}</span>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-dismiss="modal">
+													Cancel
+												</button>
+												<a href="${delete}" class="btn btn-danger">Confirm</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
 						</c:forEach>
 					</tbody>
 				</table>
@@ -58,15 +102,7 @@
 
 	</div>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/app.js"></script>
+	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 
 </body>
 </html>

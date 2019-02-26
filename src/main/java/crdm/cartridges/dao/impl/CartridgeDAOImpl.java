@@ -12,12 +12,12 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import crdm.cartridges.dao.TonerDAO;
-import crdm.cartridges.entity.Toner;
+import crdm.cartridges.dao.CartridgeDAO;
+import crdm.cartridges.entity.Cartridge;
 
 
 @Repository
-public class TonerDAOImpl implements TonerDAO{
+public class CartridgeDAOImpl implements CartridgeDAO{
 	
 	@Autowired
 	SessionFactory sessionFactory;
@@ -27,35 +27,35 @@ public class TonerDAOImpl implements TonerDAO{
 	}
 	
 	@Override
-	public Toner find(Integer id) {
+	public Cartridge find(Integer id) {
 		Session session = getSession();
 		
-		return session.find(Toner.class, id);
+		return session.find(Cartridge.class, id);
 	}
 	
 	@Override
-	public List<Toner> findAll() {
+	public List<Cartridge> findAll() {
 		Session session = getSession();
 		CriteriaBuilder cb = session.getCriteriaBuilder();
-		CriteriaQuery<Toner> cq = cb.createQuery(Toner.class);
-		Root<Toner> root = cq.from(Toner.class);
-		CriteriaQuery<Toner> all = cq.select(root);
+		CriteriaQuery<Cartridge> cq = cb.createQuery(Cartridge.class);
+		Root<Cartridge> root = cq.from(Cartridge.class);
+		CriteriaQuery<Cartridge> all = cq.select(root);
 		
-		TypedQuery<Toner> allQuery = session.createQuery(all);
+		TypedQuery<Cartridge> allQuery = session.createQuery(all);
 		
 		return allQuery.getResultList();
 		
 	}
 	
-	public void save(Toner toner) {
-		 getSession().saveOrUpdate(toner);
+	public void save(Cartridge cartridge) {
+		 getSession().saveOrUpdate(cartridge);
 	}
 
 	@Override
 	public void delete(Integer id) {
 		Session session = getSession();
-		Toner toner = getSession().find(Toner.class, id);
-		session.delete(toner);
+		Cartridge cartridge = getSession().find(Cartridge.class, id);
+		session.delete(cartridge);
 		
 	}
 	

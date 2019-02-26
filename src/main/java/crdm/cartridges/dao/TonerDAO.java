@@ -10,4 +10,6 @@ public interface TonerDAO {
 	List<Toner> findAll();
 
 	void save(Toner toner);
+
+	void delete(Integer id);
 }

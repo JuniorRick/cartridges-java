@@ -30,14 +30,15 @@ public class Toner {
 
 	private String company;
 
-	@Column(name = "is_active")
-	private Boolean active;
+	@Column(name = "is_active", nullable = false, columnDefinition = "boolean default true")
+	private Boolean active = true;
 
-	public Toner() {}
 	
-	
-	public Toner(String model, Float quantity, Float remainder, Date procure_date, Float price,
-			String company, Boolean active) {
+	public Toner() {
+	}
+
+	public Toner(String model, Float quantity, Float remainder, Date procure_date, Float price, String company,
+			Boolean active) {
 		this.model = model;
 		this.quantity = quantity;
 		this.remainder = remainder;
